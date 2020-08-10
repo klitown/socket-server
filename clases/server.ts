@@ -47,16 +47,21 @@ export default class Server {
         
         // Conectar cliente
 
-        socketCfg.conectarCliente( cliente );
+        socketCfg.conectarCliente( cliente, this.io );
 
 
         // Desconexion de cliente
-        socketCfg.disconnect( cliente );
+        socketCfg.disconnect( cliente, this.io );
 
         // Mensaje de cliente
         socketCfg.mensaje( cliente, this.io );
 
+        // Config de usuario
         socketCfg.loginUser( cliente, this.io );
+
+        // Obtener usuario
+        socketCfg.obtenerUsuario( cliente, this.io );
+
         });
 
         
